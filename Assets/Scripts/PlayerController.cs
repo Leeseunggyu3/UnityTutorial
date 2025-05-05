@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            SoundManager.Instance?.PlayJump();
         }
 
         // 애니메이션 전환
@@ -61,4 +62,18 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Goal"))
+        {
+            GoalTrigger goal = other.GetComponent<GoalTrigger>();
+            if (goal != null)
+            {
+                goal.TriggerGoal();
+                SoundManager.Instance?.PlayGoal();
+            }
+        }
+    }
+
 }

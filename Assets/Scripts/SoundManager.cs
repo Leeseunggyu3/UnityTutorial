@@ -4,10 +4,10 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [Header("효과음 소스")]
+    [Header("Audio Sources")]
     public AudioSource sfxSource;
 
-    [Header("효과음 클립들")]
+    [Header("Audio Clips")]
     public AudioClip jumpClip;
     public AudioClip GoalClip;
 
