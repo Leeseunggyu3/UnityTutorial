@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip jumpClip;
     public AudioClip GoalClip;
-
+    public AudioClip DeadClip;
     private void Awake()
     {
         // ½Ì±ÛÅæ ÆÐÅÏ (Àü¿ª Á¢±Ù)
@@ -34,5 +34,10 @@ public class SoundManager : MonoBehaviour
     {
 
         sfxSource.PlayOneShot(GoalClip);
+    }
+    public void PlayDead()
+    {
+
+        sfxSource.PlayOneShot(DeadClip);
     }
 }
